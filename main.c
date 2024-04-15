@@ -1,26 +1,34 @@
 #include <stdio.h>
 
 int main() {
-    // Variável para demonstração
-    unsigned char byte = 0b10101010; // Exemplo de um byte com bits alternados
-    
-    // Máscara para acessar o quarto bit
-    unsigned char mascara = 0b00001000; // O quarto bit é 1, os outros são 0s
-    
-    // Verificando se o quarto bit está definido
-    if (byte & mascara) {
-        printf("O quarto bit está definido.\n");
-    } else {
-        printf("O quarto bit não está definido.\n");
-    }
-    
-    // Definindo o quarto bit como 1
-    byte |= mascara;
-    printf("Byte após definir o quarto bit como 1: %d\n", byte);
-    
-    // Limpando o quarto bit (definindo-o como 0)
-    byte &= ~mascara;
-    printf("Byte após limpar o quarto bit: %d\n", byte);
-    
+    // Exemplo de variáveis
+    unsigned char a = 0b10101010; // 170 em decimal
+    unsigned char b = 0b11001100; // 204 em decimal
+    unsigned char resultado;
+
+    // AND Bitwise (&)
+    resultado = a & b;
+    printf("AND Bitwise: %d\n", resultado);
+
+    // OR Bitwise (|)
+    resultado = a | b;
+    printf("OR Bitwise: %d\n", resultado);
+
+    // XOR Bitwise (^)
+    resultado = a ^ b;
+    printf("XOR Bitwise: %d\n", resultado);
+
+    // NOT Bitwise (~)
+    resultado = ~a;
+    printf("NOT Bitwise (a): %d\n", resultado);
+
+    // Deslocamento para a esquerda (<<)
+    resultado = a << 2;
+    printf("Deslocamento para a esquerda: %d\n", resultado);
+
+    // Deslocamento para a direita (>>)
+    resultado = b >> 3;
+    printf("Deslocamento para a direita: %d\n", resultado);
+
     return 0;
 }
